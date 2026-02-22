@@ -54,19 +54,15 @@
 
 /* Улучшенное форматирование секций */
 main section {
-    background-color: var(--container-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
 }
 
 main h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
 /* Подсветка активного пункта навигации */
@@ -120,10 +116,10 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 85%;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 30px 40px;
     background-color: var(--container-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -230,6 +226,47 @@ main {
 
 .release li {
     margin-bottom: 0.3rem;
+}
+
+/* Секция полезных ссылок и проектов */
+.links,
+.projects {
+    margin-bottom: 2rem;
+}
+
+.links h2,
+.projects h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.links ul,
+.projects ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.links li,
+.projects li {
+    margin-bottom: 0.5rem;
+}
+
+.links a,
+.projects a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.links a:hover,
+.projects a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* Подвал */
