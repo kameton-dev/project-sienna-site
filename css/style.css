@@ -1,105 +1,22 @@
-/* Документация и дашборд */
-.dashboard {
-    background-color: var(--container-bg);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 2rem;
-}
+/* Project Sienna - 2010 Matte Style */
 
-.dashboard h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-}
-
-.dashboard-card {
-    background-color: #f8f9fa;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.dashboard-card:hover {
-    background-color: var(--secondary-color);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.dashboard-card h4 {
-    margin-bottom: 0.5rem;
-    color: inherit;
-}
-
-.dashboard-card p {
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.dashboard-card:hover p {
-    color: #cce5ff;
-}
-
-/* Улучшенное форматирование секций */
-main section {
-    margin-bottom: 2rem;
-}
-
-main h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-    display: inline-block;
-}
-
-/* Подсветка активного пункта навигации */
-nav ul li a[href="docs.html"] {
-    font-weight: bold;
-}
-
-/* Адаптивность дашборда */
-@media (max-width: 768px) {
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .dashboard {
-        padding: 1rem;
-    }
-
-    .dashboard-card {
-        padding: 0.75rem;
-    }
-
-    .dashboard-card h4 {
-        font-size: 1.1rem;
-    }
-}
-
-/* Общие стили */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
-    --text-color: #333;
-    --bg-color: #f4f4f4;
-    --container-bg: #fff;
-    --border-color: #ddd;
+    --primary-color: #0056b3;
+    /* Darker Blue */
+    --secondary-color: #0a84ff;
+    /* Main Blue requested */
+    --accent-color: #4da3ff;
+    /* Lighter Blue */
+    --text-color: #1a202c;
+    --text-muted: #4a5568;
+    --bg-color: #f0f4f8;
+    /* Very light blue-gray */
+    --container-bg: #ffffff;
+    --border-color: #cbd5e0;
+    --header-gradient: linear-gradient(180deg, #1a365d 0%, #2a4365 100%);
+    --button-gradient: linear-gradient(180deg, #0a84ff 0%, #006ae6 100%);
+    --card-bg: #f7fafc;
+    --nav-hover: rgba(255, 255, 255, 0.15);
 }
 
 * {
@@ -109,29 +26,33 @@ nav ul li a[href="docs.html"] {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Ubuntu', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 0%, #ffffff 0%, transparent 50%);
+    /* Matte glow at top */
 }
 
 .container {
-    width: 85%;
-    max-width: 1300px;
+    width: 90%;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 30px 40px;
+    padding: 40px;
     background-color: var(--container-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Шапка */
+/* Header & Navigation */
 header {
-    background-color: var(--primary-color);
+    background: var(--header-gradient);
+    border-bottom: 3px solid var(--secondary-color);
     color: #fff;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+    padding: 0;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header .container {
@@ -141,10 +62,14 @@ header .container {
     background-color: transparent;
     border: none;
     box-shadow: none;
+    padding: 1.5rem 0;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.5px;
 }
 
 nav ul {
@@ -153,131 +78,179 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #eee;
     text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
 nav ul li a:hover {
-    color: var(--secondary-color);
+    background: var(--nav-hover);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Основное содержимое */
+#home-page nav ul li a[href="index.html"],
+#docs-page nav ul li a[href="docs.html"],
+#releases-page nav ul li a[href="releases.html"] {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
 main {
-    padding: 2rem 0;
+    padding-bottom: 4rem;
 }
 
-.hero, .features, .get-started, .release, .notes {
-    margin-bottom: 2rem;
-}
-
-.hero h2, .features h2, .get-started h2, .release h3, .notes h3 {
+h2,
+h3 {
     color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+ul {
+    margin-left: 2rem;
     margin-bottom: 1rem;
 }
 
-.features ul {
-    margin-left: 1.5rem;
+li {
+    margin-bottom: 0.6rem;
 }
 
-.features li {
-    margin-bottom: 0.5rem;
-}
-
-/* Кнопки */
+/* Buttons */
 .btn {
     display: inline-block;
-    background-color: var(--secondary-color);
+    background: var(--button-gradient);
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.8rem;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 1px solid #0056b3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    background-color: #2980b9;
+    filter: brightness(1.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .btn.disabled {
-    background-color: #5e5e5e;
+    background: #9e9e9e;
+    border-color: #757575;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
-/* Секции выпусков */
+/* Docs Page */
+.dashboard {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+}
+
+.dashboard h3 {
+    text-align: center;
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.dashboard-card {
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(10, 132, 255, 0.15);
+    background-color: #fff;
+    transform: translateY(-3px);
+}
+
+.dashboard-card h4 {
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+.dashboard-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Release Section */
 .release {
-    border-left: 4px solid var(--secondary-color);
-    padding-left: 1rem;
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--secondary-color);
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 2rem;
 }
 
 .release h3 {
     color: var(--secondary-color);
-}
-
-.release ul {
-    margin: 0.5rem 0 1rem 1.5rem;
-}
-
-.release li {
-    margin-bottom: 0.3rem;
-}
-
-/* Секция полезных ссылок и проектов */
-.links,
-.projects {
-    margin-bottom: 2rem;
-}
-
-.links h2,
-.projects h2 {
-    color: var(--primary-color);
     margin-bottom: 1rem;
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 0.5rem;
-    display: inline-block;
+    border: none;
 }
 
-.links ul,
-.projects ul {
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 0;
-}
-
-.links li,
-.projects li {
-    margin-bottom: 0.5rem;
-}
-
-.links a,
-.projects a,
-footer a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.links a:hover,
-.projects a:hover,
-footer a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-/* Подвал */
+/* Footer */
 footer {
-    background-color: var(--primary-color);
-    color: #fff;
+    background: #1a365d;
+    color: #ebf8ff;
     text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 2rem;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 5px solid #004494;
 }
 
 footer .container {
@@ -286,53 +259,52 @@ footer .container {
     box-shadow: none;
 }
 
-/* Адаптивность */
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Links  Projects */
+.links a,
+.projects a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.links a:hover,
+.projects a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
-        text-align: center;
+        padding: 1.5rem;
     }
 
     nav ul {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     nav ul li {
-        margin: 0 0.5rem;
-    }
-
-    .hero h2 {
-        font-size: 1.75rem;
+        margin: 0.3rem;
     }
 
     .container {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
-        width: 95%;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        background-color: transparent;
-        border: none;
-        box-shadow: none;
         width: 95%;
         padding: 20px;
     }
 
     header h1 {
-        font-size: 1.75rem;
-    }
-
-    nav ul li {
-        margin: 0 0.25rem;
-    }
-
-    .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        font-size: 1.8rem;
     }
 }
